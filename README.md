@@ -20,6 +20,8 @@ where the arguments `n_isolated`, `n_stick`, and `n_hinge` indicate the number o
 
 By default, the generated data will be placed in a new folder named `data` under the current path.
 
+*Note:* On our CPU machine with 50 parallel workers, the entire data generation process takes from 10 minutes to 1~2 hours, depending on the complexity of the particle system (number of particles, sticks, and hinges).
+
 
 
 #### Model training and evaluation
