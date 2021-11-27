@@ -1,12 +1,16 @@
 # Graph Mechanics Networks
 
-#### Environment
+
+
+### Environment
 
 The Python environment is depicted in `requirements.yml`.
 
 
 
-#### Data preparation
+### Data preparation
+
+**1. Simulation Dataset **
 
 Our simulation scripts are placed under `spatial_graph/n_body_system/dataset`.
 
@@ -22,9 +26,19 @@ By default, the generated data will be placed in a new folder named `data` under
 
 *Note:* On our CPU machine with 50 parallel workers, the entire data generation process takes from 10 minutes to 1~2 hours, depending on the complexity of the particle system (number of particles, sticks, and hinges).
 
+**2. MD17**
+
+The MD17 dataset can be downloaded from http://quantum-machine.org/gdml/#datasets . The splits are provided in the `MD17` folder.
+
+**3. Motion Capture**
+
+The preprocess motion capture dataset as well as the splits are provided in the `motion` folder.
 
 
-#### Model training and evaluation
+
+### Model training and evaluation
+
+**1. Simulation Dataset**
 
 Under the root path, simply use
 
@@ -35,6 +49,18 @@ python -u spatial_graph/main.py --config_by_file --outf logs 2>&1 | tee out.log
 where the `--config_by_file` option enables loading the hyper-parameters from the file `simple_config.json`.
 
 To run experiments under different scenarios, simply change the hyper-parameters in `simple_config.json`. For instance, one may change the `n_isolated`, `n_stick`, and `n_hinge` configuration to test the model with various object combinations.
+
+**2. MD17**
+
+```bash
+python -u spatial_graph/main_md17.py --config_by_file --outf logs 2>&1 | tee out.log
+```
+
+**3. Motion Capture**
+
+```bash
+python -u spatial_graph/main_motion.py --config_by_file --outf logs 2>&1 | tee out.log
+```
 
 
 

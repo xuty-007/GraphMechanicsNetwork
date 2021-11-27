@@ -9,6 +9,7 @@ __pycache__/
 # Add
 logs/
 .idea/
+*DS_Store/
 .DS_Store/
 
 # Distribution / packaging
