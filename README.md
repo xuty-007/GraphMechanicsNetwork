@@ -10,7 +10,7 @@ The Python environment is depicted in `requirements.yml`.
 
 ### Data preparation
 
-**1. Simulation Dataset **
+**1. Simulation Dataset**
 
 Our simulation scripts are placed under `spatial_graph/n_body_system/dataset`.
 
